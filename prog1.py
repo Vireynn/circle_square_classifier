@@ -1,7 +1,7 @@
 from figure import Figure
 from random import choices
-import yaml
 from yaml.loader import FullLoader
+import yaml
 import json
 
 # Config load
@@ -47,7 +47,6 @@ square_fern = square.create_fern()
 s_prob_table = square.prob_table(square_fern)
 
 # Saving c_prob_table
-data_s_path = 'data/s_prob_table.json'
 with open(data_s_path, 'w') as f_obj:
     json.dump(s_prob_table, f_obj)
 

@@ -1,4 +1,4 @@
-image_size: 63
+image_size: 64
 desc_length: 9 # descriptor length
 
 circle.path:
