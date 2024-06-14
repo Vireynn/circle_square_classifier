@@ -1,0 +1,12 @@
+image_size: 64
+desc_length: 9 # descriptor length
+
+circle.path:
+  circle_filepath: "img/circle/*.png"
+  circle_data_path: "data/c_prob_table.json"
+
+square.path:
+  square_filepath: "img/square/*.png"
+  square_data_path: "data/s_prob_table.json"
+
+coords_filepath: "data/coords.json"
