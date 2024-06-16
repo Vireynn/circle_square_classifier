@@ -9,25 +9,27 @@ class Figure:
         self.coords = coords
         self.num_of_parts = 3
 
-    def bin_attr_fern(self, image):
+    @staticmethod
+    def bin_attr_fern(image, coords):
         """ Creating a binary feature based on the brightness of two pixels. """
         fern = ''
-        for elem in self.coords:
+        for elem in coords:
             if image[elem[0][0], elem[0][1]] > image[elem[1][0], elem[1][1]]:
                 fern += '1'
             else:
                 fern += '0'
         return fern
 
-    def fern_split(self, sequence: str):
+    @staticmethod
+    def fern_split(sequence: str, num_of_parts: int):
         """ Partitioning a vector into several groups. """
-        return [sequence[i * len(sequence) // self.num_of_parts: (i + 1) * len(sequence) // self.num_of_parts]
-                for i in range(self.num_of_parts)]
+        return [sequence[i * len(sequence) // num_of_parts: (i + 1) * len(sequence) // num_of_parts]
+                for i in range(num_of_parts)]
 
     def create_fern(self):
         """ Creation of fern descriptors and conversion to decimal system. """
-        fern = [self.bin_attr_fern(image) for image in self.images]
-        return [list(map(lambda x: int(x, 2), self.fern_split(seq))) for seq in fern]
+        fern = [self.bin_attr_fern(image, self.coords) for image in self.images]
+        return [list(map(lambda x: int(x, 2), self.fern_split(seq, self.num_of_parts))) for seq in fern]
 
     def prob_table(self, fern):
         """ Creating a probability table. """
