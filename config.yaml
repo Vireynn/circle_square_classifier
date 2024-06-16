@@ -10,3 +10,7 @@ square.path:
   square_data_path: "data/s_prob_table.json"
 
 coords_filepath: "data/coords.json"
+
+test.img.path:
+    circle_test_image: "img/test_circle.png"
+    square_test_image: "img/test_square.png"
