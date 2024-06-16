@@ -19,7 +19,7 @@ square_filepath = config['square.path']['square_filepath']
 data_s_path = config['square.path']['square_data_path']
 coords_filepath = config['coords_filepath']
 
-# Logging
+# Logging settings
 logging.basicConfig(level=logging.INFO, filename='prog1_log.log', filemode='w',
                     format="%(asctime)s %(levelname)s %(message)s")
 
